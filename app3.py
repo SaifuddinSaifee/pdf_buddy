@@ -7,6 +7,9 @@ import pickle
 from langchain.text_splitter import RecursiveCharacterTextSplitter # To divide text in multiple chunks
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
+from langchain.llms import OpenAI
+from langchain.chains.question_answering import load_qa_chain
+from langchain.callbacks import get_openai_callback
 
 import os
 from apikey import apikey
@@ -87,9 +90,17 @@ def main():
 
         if query:
             # Find the docs/chunks that are somehow relatable to the user query | We are also setting a limiting for the number of chunks (k=4) that will be supplied to our llms so that we don't cross token limit.
-            docs = VectorStore.similarity_search(query=query, k=4) 
+            docs = VectorStore.similarity_search(query=query, k=4)
 
+            # LLM configuration
+            llm = OpenAI(model_name='gpt-3.5-turbo') # By default the model is "Da-vinci" which is slightly costlier that gpt-3.5-turbo
+            chain = load_qa_chain(llm=llm, chain_type="stuff")
+
+            with get_openai_callback() as cb:
+                response = chain.run(input_documents=docs, question=query)
+                st.write(response)
             
+            st.write(cb)
 
 
 if __name__ == '__main__':
