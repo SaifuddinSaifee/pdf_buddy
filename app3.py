@@ -79,9 +79,17 @@ def main():
             with open(f"{store_name}.pkl", 'wb') as f:
                 pickle.dump(VectorStore, f)
             st.write('Embedding stored successfully')
+        
 
+    # Accept user questions and query from front-end
 
+        query = st.text_input("Ask your PDF🚀")
 
+        if query:
+            # Find the docs/chunks that are somehow relatable to the user query | We are also setting a limiting for the number of chunks (k=4) that will be supplied to our llms so that we don't cross token limit.
+            docs = VectorStore.similarity_search(query=query, k=4) 
+
+            
 
 
 if __name__ == '__main__':
