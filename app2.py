@@ -1,5 +1,6 @@
 import os
 from apikey import apikey
+os.environ["OPENAI_API_KEY"] = apikey
 
 import streamlit as st
 from PyPDF2 import PdfReader
@@ -10,8 +11,6 @@ from langchain.chains import LLMChain
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import FAISS
-
-os.environ["OPENAI_API_KEY"] = apikey
 
 # App framkework
 st.title('Chat with PDF')
