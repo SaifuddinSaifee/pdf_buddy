@@ -1,2 +1,0 @@
-![Da-vinci](image.png)
-
