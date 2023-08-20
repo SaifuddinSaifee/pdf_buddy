@@ -38,7 +38,7 @@ def main():
             length_function = len
         )
         chunks = text_splitter.split_text(text=text)
-        st.write(chunks)
+        # st.write(chunks)
 
       # OpenAI Embedding (Optional)
         # emedding = OpenAIEmbeddings() # Embedding (sequencing and indexing) the text for machine to make some sense

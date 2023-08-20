@@ -11,16 +11,16 @@ This repository contains the code for a Streamlit app that allows you to ask que
 pip install -r requirements.txt
 ```
 
-3. Run the app by running the following command:
-
-```
-streamlit run app.py
-```
-
-4. Create a file `apikey.py`, and store your OPENAI_API_KEY in the file:
+3. Create a file `apikey.py`, and store your OPENAI_API_KEY in the file:
 
 ```python
 OPENAI_API_KEY='YOUR_OPENAI_API_KEY'
+```
+
+4. Run the app by running the following command:
+
+```
+streamlit run app.py
 ```
 
 The application will open a web page in your browser. You can then upload a PDF document to the application and ask questions about it. The application will generate text responses to your questions with regards to your uploaded PDF document.
@@ -30,14 +30,13 @@ For each query, you will also be showcased the API call charges.
 > [!IMPORTANT]
 > The `OpenAIEmbeddings` and response generations are chargable by the OPENAI API Key. To avoid unnecessary charges, I would recommend you use the [`A_Deep_Learning_Approach_for_Text_Generation.pdf`](A_Deep_Learning_Approach_for_Text_Generation.pdf) file for testing, since its corresponding [`.pkl`](A_Deep_Learning_Approach_for_Text_Generation.pkl) file is ready to use.
 
-
-I hope this is helpful!
+![Screenshot of application](image.png)
 
 ## Usage
 
 1. Upload a PDF document to the app.
 2. Enter your question in the text box.
-3. Click hit enter
+3. Hit enter
 
 The app will generate an answer to your question.
 
