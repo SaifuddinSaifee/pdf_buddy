@@ -30,7 +30,7 @@ For each query, you will also be showcased the API call charges.
 > [!IMPORTANT]
 > The `OpenAIEmbeddings` and response generations are chargable by the OPENAI API Key. To avoid unnecessary charges, I would recommend you use the [`A_Deep_Learning_Approach_for_Text_Generation.pdf`](A_Deep_Learning_Approach_for_Text_Generation.pdf) file for testing, since its corresponding [`.pkl`](A_Deep_Learning_Approach_for_Text_Generation.pkl) file is ready to use.
 
-![Screenshot of application](screenshot.jpeg)
+![Screenshot of application](/screenshot.jpeg)
 
 ## Usage
 
