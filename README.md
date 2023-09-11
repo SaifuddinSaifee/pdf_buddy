@@ -4,24 +4,38 @@ This repository contains the code for a Streamlit app that allows you to ask que
 
 ## Getting Started
 
-1. Clone the repository to your local machine.
-2. Install the dependencies by running the following command:
+1. Clone this GitHub repository or download the zip for this project.
 
-    ```
+2. Install the required dependencies:
+
+    ```bash
     pip install -r requirements.txt
     ```
 
-3. Create a file `apikey.py`, and store your OPENAI_API_KEY in the file:
+3. Set you OPENAI API key:
+   If you wish to run this app locally, then add your `OPENAI_API_KEY` to your system's environment variable. [Learn more](https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety).
+
+   *Alternatively*:
+   - Create a file `apikey.py` in same directory as `app.py`
+   - Input your OPENAI_API_KEY in the `api_key.py`.
+   - For example: `OPENAI_API_KEY = 'xx-xxxxxxxxxxxxxxxxxYOUR_API_KEYxxxxxxxxxxxxxxxxxxx'`
+   - And add these two lines in your `app.py` and `scrapper.py`
 
     ```python
-    OPENAI_API_KEY='YOUR_OPENAI_API_KEY'
+    from apikey import OPENAI_API_KEY
+    os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
     ```
 
-4. Run the app by running the following command:
+    > [!IMPORTANT]
+    > Make sure to add `apikey.py` to your `.gitignore` file to avoid exposing your API key.
 
-    ```
+4. Run the Streamlit app:
+
+    ```bash
     streamlit run app.py
     ```
+
+    Your application should be live on <http://localhost:8501/>
 
 The application will open a web page in your browser. You can then upload a PDF document to the application and ask questions about it. The application will generate text responses to your questions with regards to your uploaded PDF document.
 
