@@ -3,6 +3,7 @@ from streamlit_extras.add_vertical_space import add_vertical_space
 
 from PyPDF2 import PdfReader  # Read pdf
 import pickle
+import openai
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter # To divide text in multiple chunks
 from langchain.embeddings.openai import OpenAIEmbeddings # To form embeddings of the chunks
@@ -12,8 +13,8 @@ from langchain.chains.question_answering import load_qa_chain # Langchain Chain 
 from langchain.callbacks import get_openai_callback # Get price of each API call
 
 import os
-from apikey import OPENAI_API_KEY
-os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+# from apikey import OPENAI_API_KEY
+# os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 # App framework
 

@@ -7,21 +7,21 @@ This repository contains the code for a Streamlit app that allows you to ask que
 1. Clone the repository to your local machine.
 2. Install the dependencies by running the following command:
 
-```
-pip install -r requirements.txt
-```
+    ```
+    pip install -r requirements.txt
+    ```
 
 3. Create a file `apikey.py`, and store your OPENAI_API_KEY in the file:
 
-```python
-OPENAI_API_KEY='YOUR_OPENAI_API_KEY'
-```
+    ```python
+    OPENAI_API_KEY='YOUR_OPENAI_API_KEY'
+    ```
 
 4. Run the app by running the following command:
 
-```
-streamlit run app.py
-```
+    ```
+    streamlit run app.py
+    ```
 
 The application will open a web page in your browser. You can then upload a PDF document to the application and ask questions about it. The application will generate text responses to your questions with regards to your uploaded PDF document.
 
